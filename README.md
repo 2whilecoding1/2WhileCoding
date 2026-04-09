@@ -153,7 +153,7 @@ Números actuales:
 1. Agrega a `vite.config.ts`:
    ```typescript
    export default defineConfig({
-     base: '/tu-repositorio/',
+     base: '/',
      // ... resto de config
    })
    ```
@@ -164,6 +164,12 @@ Números actuales:
    git add dist && git commit -m "Deploy"
    git subtree push --prefix dist origin gh-pages
    ```
+
+3. Si vas a usar `2whilecoding.com`, agrega el dominio personalizado en la configuración de GitHub Pages.
+
+### Dominio Propio
+
+Para usar `2whilecoding.com`, el dominio debe apuntar al hosting que elijas mediante DNS. El proyecto ya está preparado para servir desde la raíz `/`.
 
 ## 📱 Características
 
