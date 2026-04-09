@@ -1,0 +1,9 @@
+export { Navbar } from './Navbar';
+export { Hero } from './Hero';
+export { Services } from './Services';
+export { HowItWorks } from './HowItWorks';
+export { Pricing } from './Pricing';
+export { Contact } from './Contact';
+export { Footer } from './Footer';
+export { WhatsAppButton } from './WhatsAppButton';
+export { InfinityAtomLogo } from './InfinityAtomLogo';

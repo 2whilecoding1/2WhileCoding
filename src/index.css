@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* Evita zoom accidental al hacer tap en inputs en iOS */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  /* Previene scroll horizontal en móvil */
+  overflow-x: hidden;
+}
+
+/* Targets táctiles mínimos para accesibilidad (WCAG 2.5.5) */
+button, a {
+  min-height: 44px;
+  min-width: 44px;
+}
+
+/* Estilos base para dark mode */
+body {
+  @apply bg-dark-primary text-white font-sans;
+}
+
+/* Animaciones personalizadas */
+.animate-fade-up {
+  animation: fadeUp 0.6s ease-out forwards;
+}
+
+.stagger-1 {
+  animation-delay: 0.1s;
+}
+
+.stagger-2 {
+  animation-delay: 0.2s;
+}
+
+.stagger-3 {
+  animation-delay: 0.3s;
+}
+
+.stagger-4 {
+  animation-delay: 0.4s;
+}
+
+.stagger-5 {
+  animation-delay: 0.5s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Estilos para cards */
+.card-dark {
+  @apply bg-dark-secondary border border-white border-opacity-10 rounded-lg backdrop-blur-sm transition-all duration-300;
+}
+
+.card-dark:hover {
+  @apply border-brand-electric border-opacity-50 shadow-lg shadow-brand-electric/10;
+}
+
+/* Estilos para botones */
+.btn-primary {
+  @apply px-6 py-3 rounded-lg font-semibold text-white bg-gradient-brand hover:shadow-lg hover:shadow-brand-electric/50 transition-all duration-300;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-lg font-semibold text-white border border-brand-electric hover:bg-brand-electric/10 transition-all duration-300;
+}
+
+/* Glowing border effect */
+.glow-border {
+  @apply border border-white border-opacity-10;
+  position: relative;
+  overflow: hidden;
+}
+
+.glow-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.5), rgba(124, 58, 237, 0.5));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.glow-border:hover::before {
+  opacity: 1;
+}
